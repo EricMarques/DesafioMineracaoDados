@@ -1,17 +1,7 @@
 import numpy as np
 import csv
 
-arq = open('valores.csv')
-'''
-linhas = csv.reader(arq)
-for linha in linhas:
-    for coluna in linhas:
-        print(coluna[0])
-'''
-linhas = csv.DictReader(arq)
-for linha in linhas:
-    print("X1:", linha["X1"], " - X2:", linha["X2"], " - X3:", linha["X3"])
-
+saidas = [-10, 10]
 
 def open_file(path):
     """
@@ -38,4 +28,4 @@ def open_file(path):
 # header: Contém o cabeçario do dataset sendo que a ultima coluna é a classe.
 # x_data: Contém as features para treino ou seja as primeiras três colunas do conjuto.
 # y_data: Contém as classes de cada linha de x_data, sendo 0 para setosa e 1 para versicolor
-header, x_data, y_data = open_file("valores.csv")
+treinamento = [header, x_data, y_data] = open_file("valores.csv")
